@@ -42,6 +42,9 @@ public class Code04_Drive {
 		int N = income.length;
 		int M = N >> 1;
 		int[][] dp = new int[N + 1][M + 1];
+		// 根据递归版本 上面的 index就是 i  rest 就是 j
+		// 由于递归是 index 递增，回溯时是递减，所以 i应该是递减的
+		//          rest 是递减，回溯时递增 , 所以 j应该是递增的      根据回溯的增减变化
 		for (int i = N - 1; i >= 0; i--) {
 			for (int j = 0; j <= M; j++) {
 				if (N - i == j) {
